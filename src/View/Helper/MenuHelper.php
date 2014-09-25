@@ -21,7 +21,7 @@ class MenuHelper extends Helper {
 	public function render($name, $options = []) {
 		$options += [
 			'matcher' => '\Knp\Menu\Matcher\Matcher',
-			'renderer' => '\Knp\Menu\Renderer\ListRenderer',
+			'renderer' => '\Gourmet\KnpMenu\Renderer\ListRenderer',
 		];
 
 		if (empty($this->_menus[$name])) {
