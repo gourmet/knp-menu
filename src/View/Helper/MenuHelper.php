@@ -4,7 +4,7 @@ namespace Gourmet\KnpMenu\View\Helper;
 
 use Cake\Event\Event;
 use Cake\View\Helper;
-use Gourmet\KnpMenu\Controller\Component\MenuTrait;
+use Gourmet\KnpMenu\MenuTrait;
 use Knp\Menu\Matcher\Matcher;
 use Knp\Menu\Renderer\ListRenderer;
 

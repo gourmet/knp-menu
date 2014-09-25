@@ -1,6 +1,6 @@
 <?php
 
-namespace Gourmet\KnpMenu\Controller\Component;
+namespace Gourmet\KnpMenu;
 
 trait MenuTrait {
 

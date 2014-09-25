@@ -6,7 +6,7 @@
 // an almost exact copy of MenuFactory only to use a custom MenuItem (problem not just
 // in privates, should be able to pass the class to use for creating menu items).
 
-namespace Gourmet\KnpMenu\Controller\Component;
+namespace Gourmet\KnpMenu;
 
 use Knp\Menu\MenuFactory as KnpMenuFactory;
 use Knp\Menu\Factory\ExtensionInterface;
