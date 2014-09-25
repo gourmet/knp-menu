@@ -1,0 +1,38 @@
+{
+	"name": "gourmet/knp-menu"
+	, "description": "KnpMenu for CakePHP 3"
+	, "type": "cakephp-plugin"
+	, "keywords": [
+		"cakephp"
+		, "knp"
+		, "menu"
+	]
+	, "homepage": "http://github.com/gourmet/knp-menu"
+	, "license": "MIT"
+	, "authors": [
+		{
+			"name": "Jad Bitar"
+			, "homepage": "http://jadb.io"
+			, "role": "Author"
+		}
+	]
+	, "support": {
+		"issues": "http://github.com/gourmet/knp-menu/issues"
+		, "source": "http://github.com/gourmet/knp-menu"
+	}
+	, "require": {
+		"composer/installers": "*"
+		, "knplabs/knp-menu": "~2.0"
+	}
+	, "suggest": {
+		"phpunit/phpunit": "Allows automated tests to be run without system-wide install."
+	}
+	, "autoload": {
+		"psr-4": {
+			"Gourmet\\KnpMenu\\": "."
+		}
+	}
+	, "extra": {
+		"installer-name": "Gourmet/KnpMenu"
+	}
+}
