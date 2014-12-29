@@ -18,6 +18,8 @@ class MenuHelper extends Helper
         if (!empty($this->_View->viewVars['_knp_menus_'])) {
             $this->_menus = $this->_View->viewVars['_knp_menus_'];
         }
+
+        $this->instantiate();
     }
 
     public function render($name, $options = [])

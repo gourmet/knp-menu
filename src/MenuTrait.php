@@ -2,11 +2,13 @@
 
 namespace Gourmet\KnpMenu;
 
+use ArrayObject;
+
 trait MenuTrait
 {
 
     protected $_factory;
-    protected $_menus = [];
+    protected $_menus;
 
     public function get($name, array $options = [])
     {
@@ -19,5 +21,12 @@ trait MenuTrait
         }
 
         return $this->_menus[$name];
+    }
+
+    public function instantiate()
+    {
+        if (empty($this->_menus) && !is_object($this->_menus)) {
+            $this->_menus = new ArrayObject();
+        }
     }
 }
