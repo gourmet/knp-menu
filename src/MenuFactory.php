@@ -12,36 +12,40 @@ namespace Gourmet\KnpMenu;
 use Knp\Menu\MenuFactory as KnpMenuFactory;
 use Knp\Menu\Factory\ExtensionInterface;
 
-class MenuFactory extends KnpMenuFactory {
+class MenuFactory extends KnpMenuFactory
+{
 
-	private $extensions = [];
-	private $sorted;
+    private $extensions = [];
+    private $sorted;
 
-	public function createItem($name, array $options = array()) {
-		foreach ($this->getExtensions() as $extension) {
-			$options = $extension->buildOptions($options);
-		}
+    public function createItem($name, array $options = array())
+    {
+        foreach ($this->getExtensions() as $extension) {
+            $options = $extension->buildOptions($options);
+        }
 
-		$item = new MenuItem($name, $this);
+        $item = new MenuItem($name, $this);
 
-		foreach ($this->getExtensions() as $extension) {
-			$extension->buildItem($item, $options);
-		}
+        foreach ($this->getExtensions() as $extension) {
+            $extension->buildItem($item, $options);
+        }
 
-		return $item;
-	}
+        return $item;
+    }
 
-	public function addExtension(ExtensionInterface $extension, $priority = 0) {
-		$this->extensions[$priority][] = $extension;
-		$this->sorted = null;
-	}
+    public function addExtension(ExtensionInterface $extension, $priority = 0)
+    {
+        $this->extensions[$priority][] = $extension;
+        $this->sorted = null;
+    }
 
-	private function getExtensions() {
-		if (null === $this->sorted) {
-			krsort($this->extensions);
-			$this->sorted = !empty($this->extensions) ? call_user_func_array('array_merge', $this->extensions) : array();
-		}
+    private function getExtensions()
+    {
+        if (null === $this->sorted) {
+            krsort($this->extensions);
+            $this->sorted = !empty($this->extensions) ? call_user_func_array('array_merge', $this->extensions) : array();
+        }
 
-		return $this->sorted;
-	}
+        return $this->sorted;
+    }
 }

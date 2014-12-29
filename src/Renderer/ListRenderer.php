@@ -6,18 +6,19 @@ namespace Gourmet\KnpMenu\Renderer;
 use Knp\Menu\ItemInterface;
 use Knp\Menu\Renderer\ListRenderer as KnpListRenderer;
 
-class ListRenderer extends KnpListRenderer {
+class ListRenderer extends KnpListRenderer
+{
 
-	public function render(ItemInterface $item, array $options = array()) {
-		$options = array_merge($this->defaultOptions, $options);
+    public function render(ItemInterface $item, array $options = array())
+    {
+        $options = array_merge($this->defaultOptions, $options);
 
-		$html = $this->renderList($item, $item->getAttributes(), $options);
+        $html = $this->renderList($item, $item->getAttributes(), $options);
 
-		if ($options['clear_matcher']) {
-			$this->matcher->clear();
-		}
+        if ($options['clear_matcher']) {
+            $this->matcher->clear();
+        }
 
-		return $html;
-	}
-
+        return $html;
+    }
 }
