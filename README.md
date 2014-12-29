@@ -39,7 +39,43 @@ public $helpers = ['Gourmet/KnpMenu.Menu'];
 
 ## Usage
 
-@TODO
+It's fairly simple. The concept is you 'get' a menu, and you `addChild` to it from anywhere at anytime at the
+controller or view layer. At the view layer, you can also render any defined menu.
+
+### Get a menu
+
+```php
+$menu = $this->Menu->get('my_menu');
+```
+
+### Add child to menu
+
+```php
+// using an array for URL and child's name as title
+$menu->addChild('Dashboard', ['uri' => ['controller' => 'Users', 'action' => 'dashboard']]);
+// using a named route for URL and custom title
+$menu->addChild('Dashboard', ['route' => 'dashboard', 'label' => 'My Account']);
+```
+### Render a menu
+
+*Only available at the view layer*
+
+```php
+// by default, renders as a list
+echo $this->Menu->render('my_menu');
+```
+
+Of course, you can set your own renderer (defaults to `\Gourmet\KnpMenu\Renderer\ListRenderer`) and matcher
+(defaults to `\Knp\Menu\Matcher\Matcher`) by passing them as options:
+
+```php
+echo $this->Menu->render('my_menu', [
+    'matcher' => '\Custom\Matcher',
+    'renderer' => new \Custom\Renderer(...)
+]);
+```
+
+For more, please check the official [KnpMenu][knpmenu] repo and documentation.
 
 ## Patches & Features
 
