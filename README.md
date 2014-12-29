@@ -39,7 +39,7 @@ public $helpers = ['Gourmet/KnpMenu.Menu'];
 
 ## Usage
 
-It's fairly simple. The concept is you 'get' a menu, and you `addChild` to it from anywhere at anytime at the
+It's fairly simple. The concept is you `get` a menu, and you `addChild` to it from anywhere at anytime at the
 controller or view layer. At the view layer, you can also render any defined menu.
 
 ### Get a menu
