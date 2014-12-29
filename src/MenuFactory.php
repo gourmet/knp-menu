@@ -1,5 +1,6 @@
 <?php
-// TODO submit PR to KnpLabs/KnpMenu, changing private vars to protected ones
+// TODO PR https://github.com/KnpLabs/KnpMenu/pull/175 - no time for it now, keeping
+//    current implementation
 //
 // --- THIS IS THE USE CASE IT SOLVES ---
 //
