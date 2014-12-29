@@ -33,9 +33,4 @@
 			"Gourmet\\KnpMenu\\": "src"
 		}
 	}
-	, "autoload": {
-		"psr-4": {
-			"Gourmet\\KnpMenu\\Test\\": "tests"
-		}
-	}
 }
