@@ -1,7 +1,7 @@
 <?php
 // Extend original to fix UL attributes
 
-namespace Gourmet\KnpMenu\Renderer;
+namespace Gourmet\KnpMenu\Menu\Renderer;
 
 use Knp\Menu\ItemInterface;
 use Knp\Menu\Renderer\ListRenderer as KnpListRenderer;
