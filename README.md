@@ -65,8 +65,8 @@ $menu->addChild('Dashboard', ['route' => 'dashboard', 'label' => 'My Account']);
 echo $this->Menu->render('my_menu');
 ```
 
-Of course, you can set your own renderer (defaults to `\Gourmet\KnpMenu\Renderer\ListRenderer`) and matcher
-(defaults to `\Knp\Menu\Matcher\Matcher`) by passing them as options:
+Of course, you can set your own renderer (defaults to `\Gourmet\KnpMenu\Menu\Renderer\ListRenderer`) and
+matcher (defaults to `\Gourmet\KnpMenu\Menu\Matcher\Matcher`) by passing them as options:
 
 ```php
 echo $this->Menu->render('my_menu', [
