@@ -1,6 +1,8 @@
 # KnpMenu
 
 [![Build Status](https://travis-ci.org/gourmet/knp-menu.svg?branch=master)](https://travis-ci.org/gourmet/knp-menu)
+[![Total Downloads](https://poser.pugx.org/gourmet/knp-menu/downloads.svg)](https://packagist.org/packages/gourmet/knp-menu)
+[![License](https://poser.pugx.org/gourmet/knp-menu/license.svg)](https://packagist.org/packages/gourmet/knp-menu)
 
 Use [KnpMenu][knpmenu] with [CakePHP 3][cakephp].
 
