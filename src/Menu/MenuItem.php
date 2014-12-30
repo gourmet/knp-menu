@@ -1,6 +1,6 @@
 <?php
 
-namespace Gourmet\KnpMenu;
+namespace Gourmet\KnpMenu\Menu;
 
 use Cake\Routing\Router;
 use Knp\Menu\MenuItem as KnpMenuItem;

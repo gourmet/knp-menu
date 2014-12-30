@@ -1,5 +1,7 @@
 # KnpMenu
 
+[![Build Status](https://travis-ci.org/gourmet/knp-menu.svg?branch=master)](https://travis-ci.org/gourmet/knp-menu)
+
 Use [KnpMenu][knpmenu] with [CakePHP 3][cakephp].
 
 ## Requirements
@@ -65,8 +67,8 @@ $menu->addChild('Dashboard', ['route' => 'dashboard', 'label' => 'My Account']);
 echo $this->Menu->render('my_menu');
 ```
 
-Of course, you can set your own renderer (defaults to `\Gourmet\KnpMenu\Renderer\ListRenderer`) and matcher
-(defaults to `\Knp\Menu\Matcher\Matcher`) by passing them as options:
+Of course, you can set your own renderer (defaults to `\Gourmet\KnpMenu\Menu\Renderer\ListRenderer`) and
+matcher (defaults to `\Gourmet\KnpMenu\Menu\Matcher\Matcher`) by passing them as options:
 
 ```php
 echo $this->Menu->render('my_menu', [

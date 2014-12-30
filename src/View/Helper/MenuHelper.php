@@ -4,9 +4,8 @@ namespace Gourmet\KnpMenu\View\Helper;
 
 use Cake\Event\Event;
 use Cake\View\Helper;
-use Gourmet\KnpMenu\MenuTrait;
-use Knp\Menu\Matcher\Matcher;
-use Knp\Menu\Renderer\ListRenderer;
+use Gourmet\KnpMenu\Menu\Matcher\Matcher;
+use Gourmet\KnpMenu\Menu\MenuTrait;
 
 class MenuHelper extends Helper
 {
@@ -25,8 +24,8 @@ class MenuHelper extends Helper
     public function render($name, $options = [])
     {
         $options += [
-            'matcher' => '\Knp\Menu\Matcher\Matcher',
-            'renderer' => '\Gourmet\KnpMenu\Renderer\ListRenderer',
+            'matcher' => new Matcher($this->request),
+            'renderer' => '\Gourmet\KnpMenu\Menu\Renderer\ListRenderer',
         ];
 
         if (empty($this->_menus[$name])) {

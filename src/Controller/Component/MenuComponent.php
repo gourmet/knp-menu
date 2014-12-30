@@ -4,7 +4,7 @@ namespace Gourmet\KnpMenu\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Event\Event;
-use Gourmet\KnpMenu\MenuTrait;
+use Gourmet\KnpMenu\Menu\MenuTrait;
 
 class MenuComponent extends Component
 {
