@@ -4,11 +4,7 @@
 [![Total Downloads](https://poser.pugx.org/gourmet/knp-menu/downloads.svg)](https://packagist.org/packages/gourmet/knp-menu)
 [![License](https://poser.pugx.org/gourmet/knp-menu/license.svg)](https://packagist.org/packages/gourmet/knp-menu)
 
-Use [KnpMenu][knpmenu] with [CakePHP 3][cakephp].
-
-## Requirements
-
-* CakePHP 3.x
+Use [KnpMenu] with [CakePHP 3].
 
 ## What's included?
 
@@ -17,16 +13,11 @@ Use [KnpMenu][knpmenu] with [CakePHP 3][cakephp].
 
 ## Install
 
-Using [Composer][composer]:
+Using [Composer]:
 
 ```
-composer require gourmet/knp-menu:dev-master
+composer require gourmet/knp-menu:~0.4
 ```
-
-Because this plugin has the type `cakephp-plugin` set in its own `composer.json`,
-[Composer][composer] will install it inside your /plugins directory, rather than
-in your `vendor-dir`. It is recommended that you add /plugins/gourmet to your
-`.gitignore` file and here's [why][composer:ignore].
 
 You then need to load the plugin. In `boostrap.php`, something like:
 
@@ -79,7 +70,7 @@ echo $this->Menu->render('my_menu', [
 ]);
 ```
 
-For more, please check the official [KnpMenu][knpmenu] repo and documentation.
+For more, please check the official [KnpMenu] repo and documentation.
 
 ## Patches & Features
 
@@ -96,10 +87,9 @@ http://github.com/gourmet/knp-menu/issues
 
 ## License
 
-Copyright (c) 2014, Jad Bitar and licensed under [The MIT License][mit].
+Copyright (c) 2015, Jad Bitar and licensed under [The MIT License][mit].
 
-[cakephp]:http://cakephp.org
-[composer]:http://getcomposer.org
-[composer:ignore]:http://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md
+[CakePHP 3]:http://cakephp.org
+[Composer]:http://getcomposer.org
 [mit]:http://www.opensource.org/licenses/mit-license.php
-[knpmenu]:https://github.com/KnpLabs/KnpMenu
+[KnpMenu]:https://github.com/KnpLabs/KnpMenu
