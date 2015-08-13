@@ -35,6 +35,8 @@
 	, "autoload-dev": {
 		"psr-4": {
 			"Gourmet\\KnpMenu\\Test\\": "tests"
+		    , "TestApp\\": "vendor/cakephp/cakephp/tests/test_app/TestApp"
 		}
 	}
+    , "minimum-stability": "dev"
 }

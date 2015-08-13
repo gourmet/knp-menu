@@ -4,6 +4,7 @@ namespace Gourmet\KnpMenu\Test\TestCase\View\Helper;
 
 use ArrayObject;
 use Cake\Network\Request;
+use Cake\Routing\Router;
 use Cake\TestSuite\TestCase;
 use Cake\View\View;
 use Gourmet\KnpMenu\View\Helper\MenuHelper;
@@ -17,17 +18,26 @@ class MenuHelperTest extends TestCase
         $this->View->set('_knp_menus_', new ArrayObject());
         $this->View->request = new Request(['url' => '/']);
         $this->Menu = new MenuHelper($this->View);
+
+        Router::scope('/knp_menu/', function ($routes) {
+           $routes->connect('/', ['controller' => 'tests_apps', 'action' => 'some_other_method'], ['_name' => 'some_alias']);
+        });
+//        Router::connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+//        Router::connect('/some_alias', ['controller' => 'tests_apps', 'action' => 'some_method'], ['_name' => 'bar']);
     }
 
     public function buildMenu()
     {
         $menu = $this->Menu->get('my_menu');
         $menu->addChild('foo', [
-            'uri' => ['controller' => 'Pages', 'action' => 'display', 'home'],
+            'uri' => ['controller' => 'pages', 'action' => 'display', 'home'],
             'label' => 'Home'
         ]);
-        $menu->addChild('bar', [
-            'route' => 'some'
+        $menu->addChild('some_alias', [
+            'uri' => ['controller' => 'tests_apps', 'action' => 'some_method'],
+        ]);
+        $menu->addChild('named_some_alias', [
+            'route' => 'some_alias',
         ]);
     }
 
@@ -49,9 +59,14 @@ class MenuHelperTest extends TestCase
             'Home',
             '/a',
             ['/li' => []],
-            ['li' => ['class' => 'last']],
+            ['li' => []],
             ['a' => ['href' => '/some_alias']],
-            'bar',
+            'some_alias',
+            '/a',
+            ['/li' => []],
+            ['li' => ['class' => 'last']],
+            ['a' => ['href' => '/knp_menu']],
+            'named_some_alias',
             '/a',
             ['/li' => []],
             '/ul'

@@ -9,6 +9,7 @@ use Cake\Event\Event;
 use Cake\Network\Request;
 use Cake\TestSuite\TestCase;
 use Gourmet\KnpMenu\Controller\Component\MenuComponent;
+use TestApp\Controller\Admin\PostsController;
 
 class MenuComponentTest extends TestCase
 {
@@ -17,9 +18,8 @@ class MenuComponentTest extends TestCase
     {
         parent::setUp();
         Configure::write('App.namespace', 'TestApp');
-        $this->Controller = new Controller(new Request());
-        $this->ComponentRegistry = new ComponentRegistry($this->Controller);
-        $this->Menu = new MenuComponent($this->ComponentRegistry);
+        $this->Controller = new PostsController(new Request());
+        $this->Controller->loadComponent('Gourmet/KnpMenu.Menu');
     }
 
     public function tearDown()
@@ -30,11 +30,7 @@ class MenuComponentTest extends TestCase
 
     public function testSetMenuArrayObjectViewVar()
     {
-        $event = new Event('test', $this->Controller);
-        $this->Menu->beforeFilter($event);
-        $this->Menu->beforeRender($event);
-        $result = $this->Controller->viewVars;
-        $this->assertTrue(array_key_exists('_knp_menus_', $result));
-        $this->assertInstanceOf('ArrayObject', $result['_knp_menus_']);
+        $this->Controller->render('index');
+        $this->assertArrayHasKey('_knp_menus_', $this->Controller->getView()->viewVars);
     }
 }
