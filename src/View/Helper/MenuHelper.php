@@ -38,7 +38,7 @@ class MenuHelper extends Helper
         }
 
         if (!is_object($matcher)) {
-            $matcher = new $matcher;
+            $matcher = new $matcher($this->request);
         }
 
         if (!is_object($renderer)) {
