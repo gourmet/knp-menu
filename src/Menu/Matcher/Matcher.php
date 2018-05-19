@@ -10,7 +10,6 @@ class Matcher extends KnpMenuMatcher
 {
     public function __construct(Request $request)
     {
-        $this->addVoter(new RequestVoter($request));
-        parent::__construct();
+        parent::__construct(new RequestVoter($request));
     }
 }
